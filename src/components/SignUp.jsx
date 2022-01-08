@@ -46,12 +46,16 @@ export const SignUp = () => {
   const handleRegister = async (e) => {
     try {
       await axios
-        .post(`http://localhost:4000/signup`, {
-          first_name: e.first_name,
-          last_name: e.last_name,
-          email: e.email,
-          password: e.password,
-        })
+        .post(
+          `https://piyush-registeration.herokuapp.com/signup
+        `,
+          {
+            first_name: e.first_name,
+            last_name: e.last_name,
+            email: e.email,
+            password: e.password,
+          }
+        )
         .then((res) => {
           alert(`${e.first_name} you are register check you ${e.email}`);
         });
